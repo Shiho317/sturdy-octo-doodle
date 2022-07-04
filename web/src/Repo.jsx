@@ -1,10 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Repo = ({ data, setFilterLang, filterHandler, setOnFilter }) => {
+  const navigate = useNavigate();
+
+  const clickHandler = () => {
+    navigate(`/info/${data.id}`);
+  };
+
   return (
     <tr>
-      <td>{data.name}</td>
-      <td>{data.description}</td>
+      <td onClick={() => clickHandler()}>{data.name}</td>
+      <td onClick={() => clickHandler()}>{data.description}</td>
       <td>
         {data.language && (
           <button

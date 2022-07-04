@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { createContext, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import RepoInfo from './RepoInfo';
 import Table from './Table';
 
 export const AppContext = createContext(null);
@@ -28,6 +29,7 @@ export function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Table />} />
+          <Route path="/info/:id" element={<RepoInfo />} />
         </Routes>
       </Router>
     </AppContext.Provider>
