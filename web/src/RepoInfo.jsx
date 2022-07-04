@@ -1,10 +1,11 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { AppContext } from './App';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
+import { BiArrowBack } from 'react-icons/bi';
 
 const RepoInfo = () => {
   const params = useParams();
@@ -44,6 +45,9 @@ const RepoInfo = () => {
       {clickedRepo.length > 0 && events && (
         <div>
           <h1>{clickedRepo[0].name}</h1>
+          <Link to="/">
+            <BiArrowBack />
+          </Link>
           <div>
             <h2>Latest Commit</h2>
             <h3>commit date: {events.created_at.split('T')[0]}</h3>
