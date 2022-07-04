@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Repo.css';
+import './styles/Repo.css';
 
 const Repo = ({ data, setFilterLang, filterHandler, setOnFilter }) => {
   const navigate = useNavigate();

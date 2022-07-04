@@ -6,7 +6,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { BiArrowBack } from 'react-icons/bi';
-import './RepoInfo.css';
+import './styles/RepoInfo.css';
 
 const RepoInfo = () => {
   const params = useParams();

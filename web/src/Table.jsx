@@ -3,7 +3,7 @@ import { AppContext } from './App';
 import { MdFilterList } from 'react-icons/md';
 import { TbSortDescending } from 'react-icons/tb';
 import Repo from './Repo';
-import './Table.css';
+import './styles/Table.css';
 
 const Table = () => {
   const { repoDatas } = useContext(AppContext);
