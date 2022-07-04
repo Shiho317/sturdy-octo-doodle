@@ -16,6 +16,7 @@ repos.get('/', async (_: Request, res: Response) => {
 
 repos.get('/api', async (_: Request, res: Response) => {
   res.header('Cache-Control', 'no-store');
+  res.setHeader('Content-Type', 'application/json');
 
   await axios
     .get<Repo[]>('https://api.github.com/users/silverorange/repos')
