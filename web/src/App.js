@@ -5,7 +5,7 @@ import Table from './Table';
 
 export const AppContext = createContext(null);
 
-const App = () => {
+export function App() {
   const [repoDatas, setRepoDatas] = useState([]);
 
   const getDatas = async () => {
@@ -32,6 +32,4 @@ const App = () => {
       </Router>
     </AppContext.Provider>
   );
-};
-
-export default App;
+}
