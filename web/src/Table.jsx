@@ -26,7 +26,11 @@ const Table = () => {
         </thead>
         <tbody>
           {repoDatas.length > 0 &&
-            repoDatas.map((data) => <Repo data={data} key={data.id} />)}
+            repoDatas
+              .sort((a, b) => {
+                return new Date(b.created_at) - new Date(a.created_at);
+              })
+              .map((data) => <Repo data={data} key={data.id} />)}
         </tbody>
       </table>
     </>
