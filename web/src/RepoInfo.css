@@ -1,0 +1,22 @@
+.repo-info {
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.commit-info,
+.readme-info {
+  width: 95%;
+  margin: 4rem auto;
+}
+
+.commit-info h2,
+.readme-info h2 {
+  border-bottom: 1px solid black;
+}
