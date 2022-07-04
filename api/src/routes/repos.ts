@@ -21,7 +21,8 @@ repos.get('/api', async (_: Request, res: Response) => {
     .get<Repo[]>('https://api.github.com/users/silverorange/repos')
     .then((result) => {
       const { data } = result;
-      res.send(data);
+      const filtered = data.filter((repo) => repo.fork === false);
+      res.send(filtered);
     })
     .catch((err) => {
       console.log(err);
