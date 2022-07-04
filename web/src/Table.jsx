@@ -3,6 +3,7 @@ import { AppContext } from './App';
 import { MdFilterList } from 'react-icons/md';
 import { TbSortDescending } from 'react-icons/tb';
 import Repo from './Repo';
+import './Table.css';
 
 const Table = () => {
   const { repoDatas } = useContext(AppContext);
@@ -34,6 +35,7 @@ const Table = () => {
         />
         {onFilter ? (
           <button
+            className="sort-btn"
             onClick={() => {
               setFilterLang('');
               setOnFilter(false);
@@ -42,7 +44,10 @@ const Table = () => {
             <MdFilterList />
           </button>
         ) : (
-          <button onClick={() => filterHandler(filterLang)}>
+          <button
+            className="sort-btn"
+            onClick={() => filterHandler(filterLang)}
+          >
             <TbSortDescending />
           </button>
         )}

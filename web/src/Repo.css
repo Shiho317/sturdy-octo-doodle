@@ -1,0 +1,16 @@
+tbody tr{
+  cursor: pointer;
+  background: #dcdcdc;
+}
+
+tbody tr:hover{
+  background: grey;
+}
+
+.language-btn{
+  cursor: pointer;
+}
+
+.repo-details td:hover{
+  text-decoration: underline;
+}

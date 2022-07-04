@@ -6,6 +6,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { BiArrowBack } from 'react-icons/bi';
+import './RepoInfo.css';
 
 const RepoInfo = () => {
   const params = useParams();
@@ -43,19 +44,19 @@ const RepoInfo = () => {
   return (
     <>
       {clickedRepo.length > 0 && events && (
-        <div>
+        <div className="repo-info">
           <h1>{clickedRepo[0].name}</h1>
-          <Link to="/">
+          <Link to="/" className="back-btn">
             <BiArrowBack />
           </Link>
-          <div>
+          <div className="commit-info">
             <h2>Latest Commit</h2>
             <h3>commit date: {events.created_at.split('T')[0]}</h3>
             <h3>author: {events.payload.commits[0].author.name}</h3>
             <h3>message: "{events.payload.commits[0].message}"</h3>
           </div>
           {readMe && (
-            <div>
+            <div className="readme-info">
               <h2>ReadMe</h2>
               <ReactMarkdown
                 children={readMe}

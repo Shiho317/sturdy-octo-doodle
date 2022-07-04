@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Repo.css';
 
 const Repo = ({ data, setFilterLang, filterHandler, setOnFilter }) => {
   const navigate = useNavigate();
@@ -9,12 +10,13 @@ const Repo = ({ data, setFilterLang, filterHandler, setOnFilter }) => {
   };
 
   return (
-    <tr>
+    <tr className="repo-details">
       <td onClick={() => clickHandler()}>{data.name}</td>
       <td onClick={() => clickHandler()}>{data.description}</td>
       <td>
         {data.language && (
           <button
+            className="language-btn"
             onClick={() => {
               setFilterLang(data.language);
               filterHandler(data.language);
